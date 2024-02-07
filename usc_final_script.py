@@ -9,10 +9,11 @@ import spkit as sp
 from scipy.signal import savgol_filter
 import csv
 
+#read data after combining csvs with script
 raw_df = pd.read_csv("combined.csv")
 raw_test_df = pd.read_csv("combined_results.csv")
 
-
+#split data into EEG readings and sleep state label
 eeg_data = raw_df.iloc[:,:-1]
 eeg_test_data = raw_df.iloc[:,:-1]
 
@@ -95,7 +96,7 @@ for epoch in test_data_reshape:
 mean_amplitudes_df = pd.DataFrame(mean_amplitudes, columns = ['dm', 'tm', 'am', 'bm', 'gm', 'hgm', 'hfom'])
 mean_test_amplitudes_df = pd.DataFrame(mean_test_amplitudes, columns = ['dm', 'tm', 'am', 'bm', 'gm', 'hgm', 'hfom'])
 
-#the following chunk of code is redundant, as data processing and model fitting were performed separately 
+#the following chunk of code is redundant, as data processing and model fitting were performed separately and combined
 def eeg_decomposition(eeg_data, sampling_rate=500):
     #repeat EEG wave decomposition with a Fourier transform 
     fft_values = np.abs(np.fft.fft(eeg_data, axis=1))
