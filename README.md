@@ -1,4 +1,4 @@
-# EEG-Automated-Sleep-Stage-Classification
+# EEG-Automated-Sleep-Stage-Classification 
 
 This repository contains the code and resources used for automating sleep stage classification with single-channel Electroencephalography (EEG) data from rats.
 
